@@ -1,10 +1,10 @@
 class Animal:
-    alive: list["Animal"] = []
+    alive = []
 
-    def __init__(self, name: str) -> None:
-        self.name: str = name
-        self.health: int = 100
-        self.hidden: bool = False
+    def __init__(self, name: str, health: int = 100) -> None:
+        self.name = name
+        self.health = health
+        self.hidden = False
         Animal.alive.append(self)
 
     def die(self) -> None:
@@ -12,14 +12,10 @@ class Animal:
             Animal.alive.remove(self)
 
     def __repr__(self) -> str:
-        return (
-            f"{{Name: {self.name}, "
-            f"Health: {self.health}, Hidden: {self.hidden}}}"
-        )
+        return f"{{Name: {self.name}, Health: {self.health}, Hidden: {self.hidden}}}"
 
-    @classmethod
-    def __str__(cls) -> str:
-        return str(cls.alive)
+    def __str__(self) -> str:
+        return str(Animal.alive)
 
 
 class Herbivore(Animal):
@@ -33,8 +29,3 @@ class Carnivore(Animal):
             other.health -= 50
             if other.health <= 0:
                 other.die()
-# Health: 100, Hidden: False}, {Name: Kaa, Health: 100,
-# Hidden: False}]lse},
-# {Name: Lion King, Health: 100, Hidden: False}, {Name: Bagira,
-# Health: 100, Hidden: False},
-# {Name: Kaa, Health: 100, Hidden: False}]
