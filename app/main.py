@@ -13,7 +13,8 @@ class Animal:
 
     def __repr__(self) -> str:
         return (
-            f"{{Name: {self.name}, Health: {self.health}, Hidden: {self.hidden}}}"
+            f"{{Name: {self.name}, "
+            f"Health: {self.health}, Hidden: {self.hidden}}}"
         )
 
     @classmethod
@@ -32,7 +33,8 @@ class Carnivore(Animal):
             other.health -= 50
             if other.health <= 0:
                 other.die()
-# Health: 100, Hidden: False}, {Name: Kaa, Health: 100, Hidden: False}]lse},
-# {Name: Lion King, Health: 100, Hidden: False}, {Name: Bagira, Health: 100, Hidden: False},
+# Health: 100, Hidden: False}, {Name: Kaa, Health: 100,
+# Hidden: False}]lse},
+# {Name: Lion King, Health: 100, Hidden: False}, {Name: Bagira,
+# Health: 100, Hidden: False},
 # {Name: Kaa, Health: 100, Hidden: False}]
-
